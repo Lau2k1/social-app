@@ -10,7 +10,9 @@ const Posts = (props) => {
                 <img src='https://i08.fotocdn.net/s122/60c360d321f19421/user_xl/2801005976.jpg'></img>
                     {props.message}
                     <div>
-                        <span>like</span>
+                        <span>
+                            like {props.likeCount}
+                        </span>
                     </div>
         		</div>
         </div>
