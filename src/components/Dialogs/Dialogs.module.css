@@ -8,18 +8,15 @@
 }
 
 .dialogsItems .active {
-    color: blue;
 }
 
 .dialog {
     padding: 10px;
 }
 
-
 .messages {
     padding: 10px;
 }
 
-.message {
-
+.messages .message {
 }
