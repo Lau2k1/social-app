@@ -22,6 +22,14 @@ let state = {
             { id: 3, name: 'Daniil Degterev' }
         ]
     },
+
+    sideBar: {
+        friends: [
+            { id: 1, name: 'Sanya belikov' },
+            { id: 2, name: 'Sanya Bratikov' },
+            { id: 3, name: 'Daniil Degterev' }
+        ]
+    },
 }
 
 export default state;
