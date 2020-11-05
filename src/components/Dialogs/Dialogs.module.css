@@ -1,22 +1,28 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 2fr 8fr;
 }
 
 .dialogsItems {
-    padding: 10px;
 }
 
-.dialogsItems .active {
+.dialogsItems img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
 }
 
 .dialog {
     padding: 10px;
 }
 
-.messages {
-    padding: 10px;
+.dialog .activeLink {
+    color: blue;
+    text-decoration: none;
 }
 
-.messages .message {
+.messages {
+padding: 10px;
+text-align: left;
 }
+
