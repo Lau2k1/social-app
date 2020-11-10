@@ -10,22 +10,20 @@ import Profile from "./components/Profile/Profile";
 const App = (props) => {
 
     return (
-        <BrowserRouter>
-            <div className="app-wrapper">
-                <Header />
-                <Navbar />
-                <div className='app-wrapper-content'>
-                    <Route path='/profile'
-                        render={() => <Profile profilePage={props.state.profilePage} addPost={props.addPost}
-                            newPostText={props.newPostText} updateNewPostText={props.updateNewPostText} />} />
-                    <Route path='/dialogs'
-                        render={() => <Dialogs state={props.state.messagesPage} />} />
-                    <Route path='/friends'
-                        render={() => <Friends state={props.state.sideBar} />} />
+        <div className="app-wrapper">
+            <Header />
+            <Navbar />
+            <div className='app-wrapper-content'>
+                <Route path='/profile'
+                    render={() => <Profile profilePage={props.state.profilePage} addPost={props.addPost}
+                        newPostText={props.newPostText} updateNewPostText={props.updateNewPostText} />} />
+                <Route path='/dialogs'
+                    render={() => <Dialogs state={props.state.messagesPage} />} />
+                <Route path='/friends'
+                    render={() => <Friends state={props.state.sideBar} />} />
 
-                </div>
             </div>
-        </BrowserRouter>
+        </div>
     );
 };
 
