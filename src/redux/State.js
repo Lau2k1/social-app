@@ -69,14 +69,14 @@ let store = {
             this._state.messagesPage.messages.push(newMessage);
             this._state.messagesPage.newMessageText = '';
             this._callSubscriber(this._state)
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
+        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
             this._state.messagesPage.newMessageText = action.newText;
             this._callSubscriber(this._state);
         }
     }
 }
 
-export const addPostActionCreatro = () => {
+export const addPostActionCreator = () => {
     return {
         type: ADD_POST
     }
@@ -89,6 +89,18 @@ export const updateNewPostTextActionCreator = (text) => {
     }
 };
 
+export const addMessageActionCreator = () => {
+    return {
+        type: ADD_MESSAGE
+    }
+};
+
+export const updateNewMessageTextActionCreator = (text) => {
+    return {
+        type: UPDATE_NEW_POST_TEXT,
+        newText: text
+    }
+};
 
 export default store;
 window.store = store; 
