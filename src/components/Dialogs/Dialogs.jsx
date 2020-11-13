@@ -1,5 +1,5 @@
 import React from 'react';
-import { addMessageActionCreator, updateNewPostTextActionCreator } from '../../redux/State';
+import { sendMessageActionCreator, updateNewMessageTextActionCreator } from '../../redux/State';
 import style from './Dialogs.module.css';
 import DialogItem from './DialogsItem/DialogsItem';
 import Message from './Message/Message';
@@ -9,16 +9,14 @@ const Dialogs = (props) => {
 
     let messagesElement = props.state.messages.map(messages => <Message id={messages.id} message={messages.message} />)
 
-    let newMessageElement = React.createRef();
+    // let newMessageElement = React.createRef();
 
-    let addMessage = () => {
-        props.dispatch(addMessageActionCreator()) 
+    let onSendMessageClick = () => {
+        props.dispatch(sendMessageActionCreator())
     }
-
-    let onMessageChange = () =>{
-        let text = newMessageElement.current.value;
-        let action = updateNewPostTextActionCreator(text)
-        props.dispatch(action);
+    let onNewMessageChange = (e) => {
+        let text = e.target.value;
+        props.dispatch(updateNewMessageTextActionCreator(text));
     }
     return (
         <div className={style.dialogs}>
@@ -26,16 +24,16 @@ const Dialogs = (props) => {
                 {dialogsElement}
             </div>
             <div className={style.messages}>
-                {messagesElement}
-            </div>
-            <div></div>
-            <div className={style.textArea}>
-                <textarea className={style.settingTextArea} name="message" id="" cols="50" rows="5" placeholder='Send message...'
-                ref={newMessageElement} value={props.newMessageText} onChange={onMessageChange}></textarea>
-            </div>
-            <div></div>
-            <div>
-                <button className={style.buttonSetting} onClick={addMessage}>Add post</button>
+                <div>{messagesElement}</div>
+                <div>
+                    <div className={style.textArea}>
+                        <textarea className={style.settingTextArea} name="message" id="" cols="50" rows="5" placeholder='Write message...'
+                            value={props.state.newMessageText} onChange={onNewMessageChange}></textarea>
+                    </div>
+                    <div>
+                        <button className={style.buttonSetting} onClick={onSendMessageClick}>Send</button>
+                    </div>
+                </div>
             </div>
         </div>
     )
