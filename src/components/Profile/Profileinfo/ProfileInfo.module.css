@@ -1,3 +1,29 @@
-.descriptionBlock {
-    padding: 10px;
+.photo img {
+    width: 900px;
+    height: 360px;
+}
+
+
+.discriptionBlock {
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    margin: 10px 0px 0px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px;
+
+}
+
+.discriptionBlock img {
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 125px;
+}
+
+.buttonEditor{
+    margin-left: 20px;
+    background-color: whitesmoke;
+    border-radius: 20px;
 }

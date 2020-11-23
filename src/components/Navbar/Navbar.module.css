@@ -1,14 +1,22 @@
 .nav {
     grid-area: n;
-    background-color: coral;
+    background-color: #edeef0;
     padding: 20px;
 }
 
-.item a{
+/* .item {
     color: white;
-    text-decoration: none;
+} */
+
+.itemSattings{
+    margin-top: 20px;
 }
 
-.item a.activeLink {
+.item a {
+    text-decoration: none;
+    color: #285473;
+}
+
+.item a.activ {
     color: blue;
 }

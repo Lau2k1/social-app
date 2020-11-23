@@ -1,10 +1,12 @@
 import React from 'react';
-import style from './Header.module.css'
+import s from './Header.module.css';
 
 const Header = () => {
-    return <header className={style.header}>
-        <img src='https://www.freelogodesign.org/Content/img/logo-ex-7.png' />
-    </header>
+    return (
+        <header className={s.header}>
+            <img src="https://brannetmarket.com/wp-content/uploads/2018/08/BRALOGO27.jpg"></img>
+        </header>
+    );
 }
 
 export default Header;

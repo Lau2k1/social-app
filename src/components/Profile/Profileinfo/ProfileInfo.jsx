@@ -1,17 +1,18 @@
 import React from 'react';
-import style from './ProfileInfo.module.css';
+import s from './ProfileInfo.module.css'
 
-const ProfileInfo = (props) => {
+const ProfileInfo = () => {
     return (
         <div>
-            <div>
-                <img src='https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350' />
+            <div className={s.photo}>
+                {/*<img src='https://cdn.pixabay.com/photo/2020/03/24/11/21/thunder-4963719_960_720.jpg' />*/}
             </div>
-            <div className={style.descriptionBlock}>
-                ava + description
-    	    </div>
+            <div className={s.discriptionBlock}>
+                <img src = 'https://cdn.pixabay.com/photo/2015/11/26/22/28/girl-1064664_960_720.jpg' />
+                <button className={s.buttonEditor}>Редактировать</button>
+            </div>
         </div>
-    )
+    );
 }
 
 export default ProfileInfo;

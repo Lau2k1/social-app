@@ -1,38 +1,47 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profileReducer';
-import style from './MyPosts.module.css'
-import Posts from './Posts/Post';
+import s from './MyPosts.module.css';
+import Post from './Post/Post';
+import {addPostActionCreator, updateNewPostTextActionCreator} from '../../../redux/profileReducer';
+
+
 
 
 const MyPosts = (props) => {
-    let postsElements = props.postsData.map(posts => <Posts message={posts.message} likeCount={posts.likeCount} />)
+    let postsElements =
+        props.posts.map( p => <Post message={p.message} likesCount={p.likesCount}/>);
 
     let newPostElement = React.createRef();
+
     let addPost = () => {
         props.dispatch(addPostActionCreator());
     }
+
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch( updateNewPostTextActionCreator(text));
+        props.dispatch(updateNewPostTextActionCreator(text));
     }
 
     return (
-        <div className={style.postsBlock}>
-            <h3>
-                My posts
-            </h3>
+<div className={s.postsBlock}>
+            <div>
+                <h3>My posts</h3>
+            </div>
             <div>
                 <div>
-                    <textarea name="" id="" cols="60" rows="5"
-                        placeholder='Write post...' ref={newPostElement}
-                        value={props.newPostText} onChange={onPostChange} />
+                    <textarea ref={newPostElement}
+                              value={props.newPostText}
+                              onChange={onPostChange}
+                              placeholder='Отправте пост...'
+                    />
                 </div>
                 <div>
                     <button onClick={addPost}>Add post</button>
                 </div>
             </div>
-            <div className={style.posts}>
+            <div className={s.posts}>
+
                 {postsElements}
+
             </div>
         </div>
     )
