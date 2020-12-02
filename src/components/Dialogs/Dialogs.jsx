@@ -2,7 +2,6 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../redux/dialogsReducer';
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
@@ -13,13 +12,13 @@ const Dialogs = (props) => {
 
     let onSendMessageClick = () => {
         props.sendMessgae();
-    }
+    };
 
     let onNewMessageChange = (e) => {
         let text = newMessageText.current.value;
         props.updateNewMessageText(text);
     };
-debugger;
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
