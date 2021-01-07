@@ -7,8 +7,8 @@ const Dialogs = (props) => {
     let state = props.dialogsPage;
     let newMessageText = React.createRef();
 
-    let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
-    let messagesElements = state.messages.map(message => <Message message={message.message} />);
+    let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} />);
+    let messagesElements = state.messages.map(message => <Message message={message.message} key={message.id}/>);
 
     let onSendMessageClick = () => {
         props.sendMessgae();
@@ -16,7 +16,7 @@ const Dialogs = (props) => {
 
     let onNewMessageChange = (e) => {
         let text = newMessageText.current.value;
-        props.updateNewMessageText(text);
+        props.updateNewMessagesText(text);
     };
 
     return (
@@ -31,7 +31,7 @@ const Dialogs = (props) => {
             <div>
             </div>
             <div>
-                <textarea ref={newMessageText} value={props.newMessageText} onChange={onNewMessageChange}
+                <textarea ref={newMessageText} value={props.newMessagesText} onChange={onNewMessageChange}
                     className={s.textAreaSetting} placeholder='Отправте сообщение...' />
                 <button onClick={onSendMessageClick} className={s.buttonSetting}>Отправить</button>
             </div>
